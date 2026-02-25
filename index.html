@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Aesthetic Website</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      position: fixed;
+      width: 100%;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #38bdf8;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: #38bdf8;
+    }
+
+    .hero p {
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border: none;
+      background: #38bdf8;
+      color: black;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #38bdf8;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 60px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #38bdf8;
+      text-align: center;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0,0,0,0.4);
+      margin-top: 50px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Scroll Animation */
+    .hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h1>MySite</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div>
+      <h2>Hello, I'm <span>Yash</span></h2>
+      <p>I build beautiful websites & digital experiences.</p>
+      <button class="btn">Explore My Work</button>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section id="about">
+    <h3 class="section-title hidden">About Me</h3>
+    <div class="cards">
+      <div class="card hidden">
+        <h4>Creative Design</h4>
+        <p>I design modern, aesthetic and user-friendly interfaces.</p>
+      </div>
+      <div class="card hidden">
+        <h4>Web Development</h4>
+        <p>Building responsive and performant websites.</p>
+      </div>
+      <div class="card hidden">
+        <h4>Problem Solving</h4>
+        <p>I love turning ideas into digital reality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h3 class="section-title hidden">Projects</h3>
+    <div class="cards">
+      <div class="card hidden">
+        <h4>Portfolio Website</h4>
+        <p>Personal brand website with animations.</p>
+      </div>
+      <div class="card hidden">
+        <h4>AI Tools</h4>
+        <p>Built intelligent automation & AI apps.</p>
+      </div>
+      <div class="card hidden">
+        <h4>Business Landing Page</h4>
+        <p>High-conversion marketing website.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h3 class="section-title hidden">Contact</h3>
+    <div class="cards">
+      <div class="card hidden">
+        <p>Email: you@email.com</p>
+        <p>LinkedIn: yourprofile</p>
+        <p>GitHub: yourusername</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 MySite — Built with HTML, CSS & JS
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
